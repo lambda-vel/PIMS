@@ -1,5 +1,19 @@
 <!DOCTYPE html>
+<?php
 
+session_start();
+if(!($_SESSION['customer'])){
+  header('Location: includes/login.php');
+}
+if(isset($_SESSION['customer'])){
+  $user = $_SESSION['username'];
+  $role = $_SESSION['role_id'];
+  $customer_name = $_SESSION['customer_name'];
+} else {
+  header('includes/login.php');
+}
+
+?>
 
 <html lang="en">
 <head>
@@ -37,9 +51,9 @@
             <a class="nav-link"  href="cart.php">Cart</a>
           </li>
 
-          <li class="nav-item">
+          <!-- li class="nav-item">
             <a class="nav-link"  href="#">Login</a>
-          </li>
+          </li -->
 
           <!--
           <li class="nav-item">
@@ -59,6 +73,15 @@
             </ul>
           </li>
           -->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <?php echo $customer_name; ?>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" style="color:red!important;"  href="includes/logout.php">Logout</a></li>
+            </ul>
+          </li>
 
         </ul>
       </div>

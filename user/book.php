@@ -8,6 +8,8 @@ $result = mysqli_query($conn, $sql);
 
 
 if(isset($_POST['insert_btn'])){
+  header('Location: insert_book.php');
+  /*
   $insert_book_id = $_POST['insert_book_id'];
   $insert_book_name = $_POST['insert_book_name'];
   $insert_book_author = $_POST['insert_book_author'];
@@ -19,10 +21,16 @@ if(isset($_POST['insert_btn'])){
   if($insert_query){
      header('Location: book.php');
   }
+  */
 }
 
 if(isset($_POST['update_btn'])){
   $update_book_id = $_POST['book_id'];
+
+  $_SESSION['update_book_id'] = $update_book_id;
+  header('Location: update_book.php');
+
+  /*
   $book_name = $_POST['book_name'];
   $book_author = $_POST['book_author'];
   $book_price = $_POST['book_price'];
@@ -33,6 +41,7 @@ if(isset($_POST['update_btn'])){
   if($update_query){
      header('Location: book.php');
   }
+  */
 };
 
 if(isset($_GET['remove'])){
@@ -54,7 +63,20 @@ if(isset($_GET['remove'])){
 <body>
   <br>
     <div class="container-fluid">
-    <h5>Book List</h5>
+
+      <div class="container-fluid flex-row">
+
+        <div class="d-flex justify-content-start"><h3>Book List</h3></div>
+
+        <div class="d-flex justify-content-end">
+          <form class="d-flex" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <button class="btn btn-outline-success" type="submit" name="insert_btn">Add Book</button>
+          </form>
+        </div>
+
+        <br>
+      </div>
+
     <br>
     <div class="scrollme">
     <table class="table table-striped table-hover table-responsive align-middle width:100% display nowrap">
@@ -68,17 +90,6 @@ if(isset($_GET['remove'])){
       <th scope="col">Category</th>
       <th scope="col" colspan="2">Actions</th>
     </tr>
-              <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-               <tr>
-                <input type="hidden" name="insert_book_id"  value="">
-                <td>#</td>
-                <td><input type="text" name="insert_book_name"  value=""></td>
-                <td><input type="text" name="insert_book_author"  value=""></td>
-                <td><input type="number" name="insert_book_price"  value=""></td>
-                <td><input type="text" name="insert_book_category"  value=""></td>
-                <td><button type="submit" class="btn btn-success" name="insert_btn">Insert</button></td>
-               </tr>
-              </form>
   </thead>
   <tbody>
        
@@ -90,13 +101,13 @@ if(isset($_GET['remove'])){
              <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                <tr>
                 <input type="hidden" name="book_id"  value="<?php echo $row['book_id'];?>">
-                <td><label for="book id"><?php echo $row['book_id'];?></label></td>
-                <td><input type="text" name="book_name"  value="<?php echo $row['book_name'];?>"></td>
-                <td><input type="text" name="book_author"  value="<?php echo $row['book_author'];?>"></td>
-                <td><input type="number" name="book_price"  value="<?php echo $row['book_price'];?>"></td>
-                <td><input type="text" name="book_category"  value="<?php echo $row['book_category'];?>"></td>
+                <td><?php echo $row['book_id'];?></td>
+                <td><?php echo $row['book_name'];?></td>
+                <td><?php echo $row['book_author'];?></td>
+                <td><?php echo $row['book_price'];?></td>
+                <td><?php echo $row['book_category'];?></td>
                 <td><button type="submit" class="btn btn-warning" name="update_btn">Update</button></td>
-                <td><a class="btn btn-danger" href="book.php?remove=<?php echo $row['book_id']; ?>">Delete</a></td>
+                <!-- td><a class="btn btn-danger" href="book.php?remove=<?php echo $row['book_id']; ?>">Delete</a></td -->
                 </tr>
               </form>
                 <?php }
