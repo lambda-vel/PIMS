@@ -23,7 +23,7 @@
     if(mysqli_num_rows($verify_username_email) > 0){
       echo '<script>alert("Username or Email already exists.")</script>';
     } else {
-      $login_query = "INSERT INTO login (username, password, role_id) VALUES ('$username', '$secured_password', '400')";
+      $login_query = "INSERT INTO login (username, password, role_id) VALUES ('$username', '$secured_password', '200')";
       $login_creation = mysqli_query($conn, $login_query);
 
       if ($login_creation){
@@ -54,7 +54,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <link rel="stylesheet" href="../../assets/css/style.css">
   
-  <title>Register Customer | X Publishers</title>
+  <title>Register Author | X Publishers</title>
 </head>
 <body>
   <div class="container">
@@ -68,7 +68,7 @@
       <div class="card-container">
         <div class="card">
             <div class="card-header d-flex justify-content-center">
-              <h3>Register as Customer</h3>
+              <h3>Register as Author</h3>
             </div>
             <div class="card-body">
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">

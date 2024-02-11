@@ -3,7 +3,6 @@
   include 'includes/header.php';
   include '../config/connection.php';
 
-  session_start();
   $search_book_name = $_SESSION['search_book_name'];
 
   $searching_book_query = "SELECT * FROM book WHERE book_name LIKE '%$search_book_name%';";

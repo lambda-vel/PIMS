@@ -34,7 +34,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        
+
         <li class="nav-item">
           <a class="nav-link" href="user.php">Users</a>
         </li>
@@ -49,22 +49,6 @@
             <li><a class="dropdown-item" href="outlet.php">Outlet</a></li>
           </ul>
         </li -->
-        <!--
-        <li class="nav-item">
-          <a class="nav-link" href="purchase.php">Purchase</a>
-        </li>
-        
-        <li class="nav-item">
-          <a class="nav-link"  href="sales.php">Sales</a>
-        </li>
-        
-        <li class="nav-item">
-          <a class="nav-link"  href="purchase_report.php">Purchase Report</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"  href="sales_report.php">Sales Report</a>
-        </li>
-        -->
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -74,7 +58,6 @@
             <li><a class="dropdown-item" style="color:red!important;"  href="includes/logout.php">Logout</a></li>
           </ul>
         </li>
-
       </ul>
     </div>
   </div>

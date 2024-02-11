@@ -3,7 +3,6 @@
   include "includes/header.php";
   include '../config/connection.php';
 
-  session_start();
   $view_book_id = $_SESSION['view_book_id'];
 
   $view_query = "SELECT * FROM book WHERE book_id = '$view_book_id'";

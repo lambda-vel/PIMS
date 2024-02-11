@@ -33,28 +33,15 @@
             <a class="nav-link"  href="author.php">Authors</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link"  href="#">Login</a>
-          </li>
-
-          <!--
-          <li class="nav-item">
-            <a class="nav-link"  href="sales_report.php">Sales Report</a>
-          </li>
-          -->
-
-          <!--
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Login
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">User</a></li>
-              <li><a class="dropdown-item" href="#">Author</a></li>
-              <li><a class="dropdown-item" href="#">Admin</a></li>
+              <li><a class="dropdown-item" href="../customer/includes/login.php">Customer</a></li>
+              <li><a class="dropdown-item" href="../author/includes/login.php">Author</a></li>
             </ul>
           </li>
-          -->
 
         </ul>
       </div>

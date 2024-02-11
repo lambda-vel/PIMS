@@ -16,7 +16,7 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link" style="color:gray!important;" href="../../author/includes/login.php">Login As Author</a>
+          <a class="nav-link" style="color:gray!important;" href="../../customer/includes/login.php">Login As Customer</a>
         </li>
 
       </ul>

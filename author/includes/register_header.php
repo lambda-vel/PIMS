@@ -8,7 +8,7 @@
 
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="../../public/index.php"><h3>X Publishers</h3></a>
+    <a class="navbar-brand" href="#"><h3>X Publishers</h3></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,7 +16,7 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link" style="color:gray!important;" href="../../author/includes/login.php">Login As Author</a>
+          <a class="nav-link" style="color:gray!important;" href="login.php">Login</a>
         </li>
 
       </ul>
