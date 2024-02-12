@@ -3,17 +3,34 @@
   include 'includes/header.php';
   include '../config/connection.php';
 
-  $author_name = $_SESSION['author_name'];
-
-  $books_query = "SELECT * FROM publish WHERE book_author LIKE '$author_name'";
+  $books_query = "SELECT * FROM publish";
   $books = mysqli_query($conn, $books_query);
+
+  if(isset($_POST['approve_btn'])){
+    $id = $_POST['id'];
+
+    $approve_query = "UPDATE publish SET status = 1 WHERE id = '$id'";
+    $approve = mysqli_query($conn, $approve_query);
+
+    if($approve){
+      header('Location: publish_request.php');
+    }
+  }
+
+  if(isset($_POST['review_btn'])){
+    $review_id = $_POST['id'];
+
+    $_SESSION['review_id'] = $review_id;
+
+    header('Location: review_request.php');
+  }
 
 ?>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Books | X Publishers</title>
+  <title>Publish Requests | PIMS</title>
 </head>
 <body>
   <div class="container">
@@ -21,7 +38,7 @@
       <br>
       <div class="container-fluid flex-row">
 
-        <div class="d-flex justify-content-start"><h3>My Books</h3></div>
+        <div class="d-flex justify-content-start"><h3>Publish Requests</h3></div>
 
         <br>
       </div>
@@ -37,6 +54,7 @@
               <th scope="col">Category</th>
               <th scope="col">Book Intro</th>
               <th scope="col">Book Status</th>
+              <th scope="col">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -67,7 +85,8 @@
                     }
                   ?>
                 </td>
-                <!-- td><button type="submit" class="btn btn-warning" name="update_btn">Update</button></td -->
+                <!-- td><button type="submit" class="btn btn-success" name="approve_btn">Approve</button></td -->
+                <td><button type="submit" class="btn btn-warning" name="review_btn">Review</button></td>
                 <!-- td><a class="btn btn-danger" href="book.php?remove=<?php // echo $row['book_id']; ?>">Delete</a></td -->
               </tr>
             </form>

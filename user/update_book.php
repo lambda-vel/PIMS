@@ -74,7 +74,7 @@ if(isset($_GET['remove'])){
   <div class="container">
 
     <div class="container-fluid">
-    <h3>Book Details : <?php echo $row['book_name'];?></h3>
+    <h4>Book Details : <em><?php echo $row['book_name'];?></em></h4>
     <br>
     <div class="align-items-center justify-content-center">
     <div class="scrollme">

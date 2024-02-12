@@ -49,17 +49,19 @@
           <a class="nav-link" href="purchase.php">Purchase</a>
         </li>
         -->
+
         <li class="nav-item">
           <a class="nav-link"  href="sales.php">Sales</a>
         </li>
-        <!--
+
         <li class="nav-item">
-          <a class="nav-link"  href="purchase_report.php">Purchase Report</a>
+          <a class="nav-link"  href="publish_request.php">Requests</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link"  href="sales_report.php">Sales Report</a>
-        </li>
-        -->
+
+        <!-- li class="nav-item">
+          <a class="nav-link"  href="publish_book.php">Publish</a>
+        </li -->
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <?php echo $users_name; ?>
