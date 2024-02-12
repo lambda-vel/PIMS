@@ -3,16 +3,6 @@
   include '../../config/connection.php';
   include 'login_header.php';
 
-
-  /*
-  if(isset($_SESSION['sysadmin'])){ 
-    if($_SESSION['sysadmin'] == 000){
-      header("Location: ../index.php");
-    }
-  }
-  */
-
-  
   if (isset($_POST['submit'])){
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
@@ -38,7 +28,6 @@
     $row = mysqli_fetch_assoc($login_details);
     $result = mysqli_num_rows($login_details);
 
-    
     if($result == 1){
       //$row = mysqli_fetch_row($login_details);
       $user_data_query = "SELECT * FROM users WHERE username = '$username'";

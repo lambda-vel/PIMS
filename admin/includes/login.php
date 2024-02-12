@@ -14,14 +14,25 @@
 
   
   if (isset($_POST['submit'])){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-    $sql_username = mysqli_real_escape_string($conn, $username);
-    $sql_password = mysqli_real_escape_string($conn, $password);
-    $password_hash = sha1($sql_password);
+    /*
+    $password_query = "SELECT password FROM login WHERE username = '$username' AND role_id = 400";
+    $data = mysqli_query($conn, $password_query);
 
-    $login_query = "SELECT * FROM login WHERE username = '$sql_username' AND password = '$sql_password' AND role_id = 100";
+    $password_data = mysqli_fetch_assoc($data);
+    $stored_password = $password_data['password'];
+    */
+
+    $secured = hash('sha512', $password);
+    //$password_verify = password_verify($password, $stored_password);
+
+    
+    //$secured_password  = password_hash($password, PASSWORD_DEFAULT);
+    //$password_hash = sha1($sql_password);
+
+    $login_query = "SELECT * FROM login WHERE username = '$username' AND password = '$secured' AND role_id = 100";
     $login_details = mysqli_query($conn, $login_query);
 
     $row = mysqli_fetch_assoc($login_details);
@@ -29,7 +40,7 @@
 
     if($result == 1){
       //$row = mysqli_fetch_row($login_details);
-      $user_data_query = "SELECT * FROM users WHERE username = '$sql_username'";
+      $user_data_query = "SELECT * FROM users WHERE username = '$username'";
       $user_data = mysqli_query($conn, $user_data_query);
 
       $data = mysqli_fetch_assoc($user_data);
