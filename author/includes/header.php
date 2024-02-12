@@ -37,7 +37,7 @@ if(isset($_SESSION['author'])){
 
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-          <li class="nav-item">
+          <!-- li class="nav-item">
             <a class="nav-link" href="book.php">Book</a>
           </li>
 
@@ -51,6 +51,10 @@ if(isset($_SESSION['author'])){
 
           <li class="nav-item">
             <a class="nav-link"  href="#">Cart</a>
+          </li -->
+
+          <li>
+            <a class="nav-link" href="my_books.php">My Books</a>
           </li>
 
           <li class="nav-item dropdown">

@@ -9,7 +9,7 @@ $book = mysqli_query($conn, $book_query);
 if(isset($_POST['search_book_btn'])){
   $search_book_name = $_POST['search_book_name'];
 
-  session_start();
+  //session_start();
   $_SESSION['search_book_name'] = $search_book_name;
   header('Location:  searching_book.php');
 }
@@ -17,7 +17,7 @@ if(isset($_POST['search_book_btn'])){
 if(isset($_POST['view_btn'])){
   $view_book_id = $_POST['book_id'];
 
-  session_start();
+  //session_start();
   $_SESSION['view_book_id'] = $view_book_id;
   header('Location:  view.php');
 }

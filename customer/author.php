@@ -11,7 +11,7 @@
   if(isset($_POST['search_author_btn'])){
     $search_book_author = $_POST['search_book_author'];
   
-    session_start();
+    //session_start();
     $_SESSION['search_book_author'] = $search_book_author;
     header('Location: searching_author.php');
   }
@@ -19,7 +19,7 @@
   if(isset($_POST['author_btn'])){
     $search_book_author = $_POST['book_author'];
     
-    session_start();
+    //session_start();
     $_SESSION['search_book_author'] = $search_book_author;
     header('Location: searching_author.php');
   }

@@ -15,7 +15,7 @@
 if(isset($_POST['search_book_btn'])){
   $search_book_name = $_POST['search_book_name'];
 
-  //session_start();
+  session_start();
   $_SESSION['search_book_name'] = $search_book_name;
   header('Location: searching_book.php');
 }
@@ -23,7 +23,7 @@ if(isset($_POST['search_book_btn'])){
 if(isset($_POST['author_btn'])){
   $search_book_author = $_POST['book_author'];
   
-  //session_start();
+  session_start();
   $_SESSION['search_book_author'] = $search_book_author;
   header('Location: searching_author.php');
 }
@@ -31,7 +31,7 @@ if(isset($_POST['author_btn'])){
 if(isset($_POST['category_btn'])){
   $search_book_category = $_POST['book_category'];
   
-  //session_start();
+  session_start();
   $_SESSION['search_book_category'] = $search_book_category;
   header('Location: searching_category.php');
 }
@@ -39,7 +39,7 @@ if(isset($_POST['category_btn'])){
 if(isset($_POST['view_btn'])){
   $view_book_id = $_POST['book_id'];
 
-  //session_start();
+  session_start();
   $_SESSION['view_book_id'] = $view_book_id;
   header('Location:  view.php');
 }
@@ -49,9 +49,9 @@ if(isset($_POST['view_btn'])){
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Style Sheet >
+  <!-- Style Sheet -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  <link rel="stylesheet" href="../assets/css/style.css" -->
+  <link rel="stylesheet" href="../assets/css/style.css">
 
   <title>X Publishers</title>
 </head>

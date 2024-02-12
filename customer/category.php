@@ -11,7 +11,7 @@
   if(isset($_POST['search_category_btn'])){
     $search_book_category = $_POST['search_book_category'];
   
-    session_start();
+    //session_start();
     $_SESSION['search_book_category'] = $search_book_category;
     header('Location: searching_category.php');
   }
@@ -19,7 +19,7 @@
   if(isset($_POST['category_btn'])){
     $search_book_category = $_POST['book_category'];
     
-    session_start();
+    //session_start();
     $_SESSION['search_book_category'] = $search_book_category;
     header('Location: searching_category.php');
   }
