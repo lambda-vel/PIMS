@@ -25,6 +25,11 @@
     header('Location: review_request.php');
   }
 
+  if(isset($_POST['print_btn'])){
+    $_SESSION['action'] = "print";
+    header('Location: report_requests.php');
+  }
+
 ?>
 <html lang="en">
 <head>
@@ -37,6 +42,13 @@
     <div class="container-fluid">
       <br>
       <div class="container-fluid flex-row">
+  <div class="d-flex justify-content-end">
+  <form class="d-flex" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <!-- button class="btn btn-secondary" type="submit" name="save_btn">Save</button>
+    &nbsp; &nbsp; -->
+    <button class="btn btn-secondary" type="submit" name="print_btn">Print Report</button>
+  </form>
+  </div>
 
         <div class="d-flex justify-content-start"><h3>Publish Requests</h3></div>
 

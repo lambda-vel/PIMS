@@ -50,6 +50,18 @@ if(isset($_GET['remove'])){
   header('Location: book.php');
 };
 
+/*
+if(isset($_POST['save_btn'])){
+  $_SESSION['action'] = "save";
+  header('Location: report_book.php');
+}
+*/
+
+if(isset($_POST['print_btn'])){
+  $_SESSION['action'] = "print";
+  header('Location: report_book.php');
+}
+
 ?>
 
 <html>
@@ -65,6 +77,14 @@ if(isset($_GET['remove'])){
     <div class="container-fluid">
 
       <div class="container-fluid flex-row">
+
+        <div class="d-flex justify-content-end">
+          <form class="d-flex" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <!-- button class="btn btn-secondary" type="submit" name="save_btn">Save</button>
+            &nbsp; &nbsp; -->
+            <button class="btn btn-secondary" type="submit" name="print_btn">Print Report</button>
+          </form>
+        </div>
 
         <div class="d-flex justify-content-start"><h3>Book List</h3></div>
 

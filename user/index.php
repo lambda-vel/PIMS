@@ -33,6 +33,9 @@
 
 <html>
   <head>
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
     <title>User Dashboard | PIMS</title>
   </head>
   <body>

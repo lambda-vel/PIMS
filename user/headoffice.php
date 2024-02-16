@@ -52,17 +52,43 @@ if(isset($_GET['remove'])){
   header('Location: ../redirects/redirecting_headoffice.php');
 };
 
+if(isset($_POST['print_btn'])){
+  $_SESSION['action'] = "print";
+  header('Location: report_headoffice.php');
+}
 
 ?>
 
 <html>
 <head>
-    <title>Head Office | PIMS</title>
+  <!-- Style Sheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <title>Head Office | PIMS</title>
 </head>
 <body>
     <div class="container-fluid">
-    <h5>Stock Status @ Head Office</h5>
     <br>
+    <div class="container-fluid flex-row">
+
+<div class="d-flex justify-content-end">
+  <form class="d-flex" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <!-- button class="btn btn-secondary" type="submit" name="save_btn">Save</button>
+    &nbsp; &nbsp; -->
+    <button class="btn btn-secondary" type="submit" name="print_btn">Print Report</button>
+  </form>
+</div>
+
+<div class="d-flex justify-content-start"><h3>Stock Status @ Head Office</h3></div>
+
+<!-- div class="d-flex justify-content-end">
+  <form class="d-flex" action="<?php //echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <button class="btn btn-outline-success" type="submit" name="insert_btn">Insert Stock</button>
+  </form>
+</div -->
+
+<br>
+</div>
     <div class="scrollme">
     <table class="table table-striped table-hover table-responsive align-middle width:100% display nowrap">
     <thead>
@@ -83,7 +109,7 @@ if(isset($_GET['remove'])){
     </tbody>
     </table>
 
-    <table class="table table-striped">
+    <table class="table table-striped table-hover table-responsive align-middle width:100% display nowrap">
   <thead>
     <tr>
       <!--<th scope="col">#</th>-->

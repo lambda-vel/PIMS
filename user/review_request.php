@@ -58,6 +58,11 @@ if(isset($_POST['publish_btn'])){
   header('Location: publish_book.php');
 }
 
+if(isset($_POST['print_btn'])){
+  $_SESSION['action'] = "print";
+  header('Location: report_review.php');
+}
+
 ?>
 
 
@@ -74,7 +79,19 @@ if(isset($_POST['publish_btn'])){
   <div class="container">
 
     <div class="container-fluid">
-    <h4>Book Details : <em><?php echo $row['book_name'];?></em></h4>
+    <div class="container-fluid flex-row">
+  <div class="d-flex justify-content-end">
+  <form class="d-flex" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <!-- button class="btn btn-secondary" type="submit" name="save_btn">Save</button>
+    &nbsp; &nbsp; -->
+    <button class="btn btn-secondary" type="submit" name="print_btn">Print Report</button>
+  </form>
+  </div>
+
+        <div class="d-flex justify-content-start"><h4>Book Details : <em><?php echo $row['book_name'];?></em></h4></div>
+
+        <br>
+      </div>
     <br>
     <div class="align-items-center justify-content-center">
     <div class="scrollme">
@@ -115,7 +132,7 @@ if(isset($_POST['publish_btn'])){
       <th scope="col">Status</th>
       <td>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <?php 
           if($row['status'] == "0"){
             echo "Pending";

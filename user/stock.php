@@ -6,6 +6,9 @@
 
 <html>
 <head>
+    <!-- Style Sheet -->
+    <!-- link rel="stylesheet" href="../assets/css/style.css" -->
+    
     <title>Store | PIMS</title>
 </head>
 <body>

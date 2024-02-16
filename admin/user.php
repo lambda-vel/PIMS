@@ -31,6 +31,11 @@
     }
   }
 
+  if(isset($_POST['print_btn'])){
+    $_SESSION['action'] = "print";
+    header('Location: report_user.php');
+  }
+
 ?>
 
 <html lang="en">
@@ -47,6 +52,15 @@
     <br>
     <div class="container-fluid">
       <div class="container-fluid flex-row">
+        <div class="d-flex justify-content-end">
+          <form class="d-flex" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <!-- button class="btn btn-secondary" type="submit" name="save_btn">Save</button>
+            &nbsp; &nbsp; -->
+            <button class="btn btn-secondary" type="submit" name="print_btn">Print Report</button>
+          </form>
+        </div>
+
+        <div class="d-flex justify-content-start"><h3>Users</h3></div>
 
         <div class="d-flex justify-content-end">
           <form class="d-flex" role="search" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
@@ -54,8 +68,6 @@
           <button class="btn btn-outline-success" type="submit" name="search_user_btn">Search</button>
         </form>
         </div>
-
-        <div class="d-flex justify-content-start"><h3>Users</h3></div>
         <br>
       </div>
 

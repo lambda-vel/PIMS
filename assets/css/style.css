@@ -14,3 +14,7 @@ a.navbar-brand {
 .form-group submit-btn{
   align-self: center;
 }
+
+@media dompdf {
+  html, body { font-size: 80%; }
+}
