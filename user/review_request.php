@@ -121,10 +121,6 @@ if(isset($_POST['print_btn'])){
       <td><?php echo $book_intro;?></td>
     </tr>
     <tr>
-      <th scope="col">Book Script</th>
-      <td><?php echo $book_script;?></td>
-    </tr>
-    <tr>
       <th scope="col">Authors Comment</th>
       <td><?php echo $author_comment;?></td>
     </tr>
@@ -155,6 +151,7 @@ if(isset($_POST['print_btn'])){
         </div>
       </td>
     </tr>
+
     <tr>
       <td>
         <button type="submit" class="btn btn-primary" name="cancel_btn">Cancel</button>
@@ -162,6 +159,16 @@ if(isset($_POST['print_btn'])){
       <td>
         <button type="submit" class="btn btn-warning" name="publish_btn">Proceed to Publish</button>
       </td>
+    </tr>
+
+    <tr>
+      <th scope="col" colspan="2">Book Script</th>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <textarea class="form-control" rows="5" readonly="readonly" onkeyup="textAreaAdjust(this)"><?php echo $book_script;?></textarea>
+      </td>
+      
     </tr>
   </form>
   </tbody>

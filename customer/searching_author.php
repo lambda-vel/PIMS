@@ -26,6 +26,15 @@
     $_SESSION['view_book_id'] = $view_book_id;
     header('Location:  view.php');
   }
+
+  if(isset($_POST['add_cart'])){
+    $add_book_id = $_POST['book_id'];
+  
+    //session_start();
+    $_SESSION['add_book_id'] = $add_book_id;
+    header('Location: add_cart.php');
+  }
+  
 ?>
 
 <html lang="en">
@@ -99,7 +108,7 @@
     </div>
     <div class="card-footer">
           <button type="submit" class="btn btn-info" name="view_btn">View</button>
-          <button type="submit" class="btn btn-warning" name="add_cart">Add to Cart</button>
+          <button type="submit" class="btn btn-primary" name="add_cart">Purchase</button>
     </div>
     </form>
 

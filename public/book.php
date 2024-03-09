@@ -21,6 +21,13 @@ if(isset($_POST['view_btn'])){
   $_SESSION['view_book_id'] = $view_book_id;
   header('Location:  view.php');
 }
+
+if(isset($_POST['add_cart'])){
+  $message = "Login to purchase!";
+  echo "<script type='text/javascript'>alert('$message');</script>";
+  // header("Location: {$_SERVER['PHP_SELF']}");
+}
+
 ?>
 
 <html>
@@ -88,7 +95,7 @@ if(isset($_POST['view_btn'])){
       <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <input type="hidden" name="book_id"  value="<?php echo $row['book_id'];?>">
         <button type="submit" class="btn btn-info" name="view_btn">View</button>
-        <button type="submit" class="btn btn-warning" name="add_cart">Add to Cart</button>
+        <button type="submit" class="btn btn-primary" name="add_cart">Purchase</button>
       </form>
     </div>
 

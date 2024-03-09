@@ -4,7 +4,7 @@
   $connect = new PDO("mysql:host=localhost;dbname=db_pims", "root", "");
   include 'includes/header.php';
 
-$message = '';
+  $message = '';
 
   if(isset($_POST["add_to_cart"])){
     if(isset($_COOKIE["shopping_cart"])){

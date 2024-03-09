@@ -44,6 +44,12 @@ if(isset($_POST['view_btn'])){
   header('Location:  view.php');
 }
 
+if(isset($_POST['add_cart'])){
+  $message = "Login to purchase!";
+  echo "<script type='text/javascript'>alert('$message');</script>";
+  // header("Location: {$_SERVER['PHP_SELF']}");
+}
+
 ?>
 
 <head>
@@ -112,7 +118,7 @@ if(isset($_POST['view_btn'])){
     </div>
     <div class="card-footer">
           <button type="submit" class="btn btn-info" name="view_btn">View</button>
-          <button type="submit" class="btn btn-warning" name="add_cart">Add to Cart</button>
+          <button type="submit" class="btn btn-primary" name="add_cart">Purchase</button>
     </div>
     </form>
 

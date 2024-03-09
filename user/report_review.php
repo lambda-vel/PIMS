@@ -78,10 +78,7 @@ if (mysqli_num_rows($result) > 0) {
       <th scope="col">Book Intro</th>
       <td><?php echo $book_intro;?></td>
     </tr>
-    <tr>
-      <th scope="col">Book Script</th>
-      <td><?php echo $book_script;?></td>
-    </tr>
+
     <tr>
       <th scope="col">Authors Comment</th>
       <td><?php echo $author_comment;?></td>
@@ -103,6 +100,10 @@ if (mysqli_num_rows($result) > 0) {
           }
           ?>
       </td>
+    </tr>
+    <tr>
+      <th scope="col">Book Script</th>
+      <td><?php echo $book_script;?></td>
     </tr>
   </form>
   </tbody>

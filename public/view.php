@@ -17,6 +17,12 @@
     header('Location: searching_book.php');
   }
 
+  if(isset($_POST['add_cart'])){
+    $message = "Login to purchase!";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+    // header("Location: {$_SERVER['PHP_SELF']}");
+  }
+  
 
   if (mysqli_num_rows($view) > 0){
     while($row = mysqli_fetch_assoc($view)){
@@ -65,7 +71,7 @@
           <br><br><br>
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <input type="hidden" name="book_id"  value="<?php echo $row['book_id'];?>">
-            <button type="submit" class="btn btn-warning" name="add_cart">Add to Cart</button>
+            <button type="submit" class="btn btn-primary" name="add_cart">Purchase</button>
           </form>
         </div>
 
