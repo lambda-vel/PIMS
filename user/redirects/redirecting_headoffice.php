@@ -1,6 +1,5 @@
 <?php
-    include "../includes/header.php";
-    include "../config/connection.php";
-    sleep(2);
-    header('Location: ../stock/headoffice.php');
-?>
+include "../includes/header.php";
+include "../../config/connection.php";
+sleep(2);
+header('Location: ../headoffice.php');
